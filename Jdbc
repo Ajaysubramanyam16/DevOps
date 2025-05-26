@@ -1,0 +1,29 @@
+modification
+
+package vvce.testing;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class aisi {
+	    public static void main(String[] args) {
+	        Properties props = new Properties();
+	        try {
+	            // Load the properties file
+	            FileInputStream fis = new FileInputStream("JDBC/abc.properties");
+	            props.load(fis);
+
+	            // Read the values
+	            String firstName = props.getProperty("firstName");
+	            String lastName = props.getProperty("lastName");
+
+	            // Print output
+	            System.out.println("First Name: " + firstName);
+	            System.out.println("Last Name: " + lastName);
+
+	            fis.close();
+	        } catch (IOException e) {
+	            System.out.println("Error reading properties file: " + e.getMessage());
+	        }
+	    }
+	}
